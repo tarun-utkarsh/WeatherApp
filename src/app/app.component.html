@@ -1,0 +1,155 @@
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city"
+    [(ngModel)]="cityName">
+  </form>
+</div>
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <!-- <img src="../assets/landscape-1844230_1280.webp" *ngIf="weatherData.main.temp > 15">
+    <img src="../assets/landscape-1844231_1280 (1).webp" *ngIf="weatherData.main.temp <= 15"> -->
+
+    <!-- ninja weather rapid api -->
+    <img src="../assets/landscape-1844230_1280.webp" *ngIf="weatherData.temp > 15">
+    <img src="../assets/landscape-1844231_1280 (1).webp" *ngIf="weatherData.temp <= 15">
+
+    <div class="weather-data">
+      <!-- <div class="location">{{weatherData.name}}</div>
+      <div class="temperature">{{weatherData.main.temp | number: '1.0-0'}}°C</div> -->
+
+      <!-- ninja weather rapid api -->
+      <div class="location">{{cityName}}</div>
+      <div class="temperature">{{weatherData.temp | number: '1.0-0'}}°C</div>
+
+    </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/temperature.png">
+          <span>min</span>
+        </div>
+
+        <div class="info-block-value">
+          <!-- {{weatherData.main.temp_min | number: '1.0-0'}}°C  -->
+          {{weatherData.min_temp| number: '1.0-0'}}°C 
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/thermometer.png">
+          <span>max</span>
+        </div>
+
+        <div class="info-block-value">
+          <!-- {{weatherData.main.temp_max | number: '1.0-0'}}°C  -->
+          {{weatherData.max_temp | number: '1.0-0'}}°C 
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/drop.png">
+          <span>humidity</span>
+        </div>
+
+        <div class="info-block-value">
+          <!-- {{weatherData.main.humidity}}% -->
+          {{weatherData.humidity}}%
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/wind (1).png">
+          <span>wind</span>
+        </div>
+
+        <div class="info-block-value">
+          <!-- {{weatherData.wind.speed}}km/h  -->
+          {{weatherData.wind_speed}}km/h 
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!-- <div class="container">
+  <div class="upper-data">
+    <img src="../assets/landscape-1844230_1280.webp" *ngIf="14 > 15">
+    <img src="../assets/landscape-1844231_1280 (1).webp" *ngIf="14 <= 15">
+
+    <div class="weather-data">
+      <div class="location">Kanpur</div>
+      <div class="temperature">{{20.4 | number: '1.0-0'}}°C</div>
+
+    </div>
+  </div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/temperature.png">
+          <span>min</span>
+        </div>
+
+        <div class="info-block-value">
+          15°C 
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/thermometer.png">
+          <span>max</span>
+        </div>
+
+        <div class="info-block-value">
+          25°C 
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/drop.png">
+          <span>humidity</span>
+        </div>
+
+        <div class="info-block-value">
+          77%
+        </div>
+      </div>
+
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <img src="../assets/wind (1).png">
+          <span>wind</span>
+        </div>
+
+        <div class="info-block-value">
+          11 km/h 
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div> -->
+<router-outlet></router-outlet>
