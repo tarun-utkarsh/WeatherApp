@@ -1,4 +1,6 @@
-# WeatherApp
+# [WeatherApp](https://weather-app-tu.netlify.app/)
+
+## WeatherApp is published and LIVE on https://weather-app-tu.netlify.app/. Best viewed on desktop or laptop.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
